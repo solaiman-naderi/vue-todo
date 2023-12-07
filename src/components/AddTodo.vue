@@ -1,5 +1,5 @@
 <template>
-   <form @submit.prevent="submitAddTodo" class="w-full max-w-sm mx-auto px-4 py-2">
+   <form @submit.prevent="submitAddTodo" class="w-full  mx-auto px-4 py-2">
         <div class="flex items-center border-b-2 border-teal-500 py-2">
             <input
             v-model="taskContent"
@@ -23,9 +23,10 @@
     },
     methods:{
       submitAddTodo (){
-        
         this.$emit("submitTodo" , this.taskContent)
+        this.taskContent = ""
       }
+       
     }
   }
 </script>
